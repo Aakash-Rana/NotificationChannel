@@ -55,8 +55,7 @@ This repository contains the code for a multi-channel notification delivery syst
 2. Setup MailTrap Account to recieve emails
 3. Update ``.env`` file
     ```bash
-	TWILIO_ACCOUNT_SID , TWILIO_AUTH_TOKEN , TWILIO_PHONE_NUMBER , 
-	EMAIL_USER , EMAIL_PASSWORD , EMAIL_HOST , EMAIL_PORT
+	TWILIO_ACCOUNT_SID , TWILIO_AUTH_TOKEN , TWILIO_PHONE_NUMBER ,EMAIL_USER , EMAIL_PASSWORD , EMAIL_HOST , EMAIL_PORT
     ```
 6. Start the server:
 
@@ -70,6 +69,8 @@ This repository contains the code for a multi-channel notification delivery syst
 8. You will see a ``Service Worker`` running in ``Developer Tools -> Application -> ServiceWorker ``
 
 ![Button](https://drive.google.com/uc?export=view&id=14yom44C5eHU905zA6voYEnw5L0cuGHHK)
+
+[ You will find the endpoint , authKey , p256dhKey (subscription details ) logged to the running service ]
 
 9. Use the provided Postman collection to test the API endpoints for sending notifications.
 
@@ -101,7 +102,7 @@ SMS
 ## Code Structure
 
 - `app.js` Main application file handling API requests and routing.
-- `pushNotificationService.js`: Service for sending push notifications.
+- `pushNotificationService.js`: Service for sending push notifications ( currently sending to the all subscribed clients , but configurable )
 - `smsService.js`: Service for sending SMS messages.
 - `emailService.js`: Service for sending emails.
 - `validation.js`: Module for input validation.
